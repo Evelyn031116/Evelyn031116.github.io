@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Homepage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body class="light-theme">
+    <div class="hero-background" id="heroBackground">
+        <img src="chiikawa.jpg" alt="Background" class="hero-image" id="heroImage">
+        <div class="hero-overlay"></div>
+    </div>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span class="theme-icon">🌙</span>
+    </button>
+    <div class="container">
+        <header class="header">
+            <div class="header-top">
+                <div class="profile-section">
+                    <img src="profile.jpg" alt="Profile Photo" class="profile-photo" id="profilePhoto">
+                    <div class="name-section">
+                        <h1 class="name" id="name">Jingyi Zhong (钟静仪)</h1>
+                        <section class="section about-inline" id="about">
+                            <h2 class="section-title about-title">About Me</h2>
+                            <div class="content" id="introduction">
+                                <p>Hi there! I'm a third-year undergraduate student in Computer Science at School of Electronics and Computer Science, University of Southampton. My research interests include control theory and robotics. I was very fortunate to be an undergraduate researcher at the <a href="https://muro.ucsd.edu/" target="_blank" class="professor-link">MURO Lab</a> at UC San Diego, under the supervision of <a href="http://terrano.ucsd.edu/jorge/" target="_blank" class="professor-link">Professor Jorge Cortés</a>.</p>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <nav class="top-nav">
+                    <a href="#about" class="folder-tab">
+                        <span class="tab-label">About Me</span>
+                    </a>
+                    <a href="#publications" class="folder-tab">
+                        <span class="tab-label">Publications</span>
+                    </a>
+                    <a href="#education" class="folder-tab">
+                        <span class="tab-label">Education</span>
+                    </a>
+                    <a href="#interests" class="folder-tab">
+                        <span class="tab-label">Hobbies</span>
+                    </a>
+                    <a href="gallery.html" class="folder-tab">
+                        <span class="tab-label">Gallery</span>
+                    </a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main-content">
+
+            <section class="section" id="publications">
+                <h2 class="section-title">Publications</h2>
+                <div class="content" id="publicationsList">
+                    <div class="publication-item">
+                        <div class="publication-content">
+                            <div class="publication-image-wrapper">
+                                <img src="images/publications/paper1.jpg" alt="Paper 1" class="publication-image">
+                            </div>
+                            <div class="publication-text">
+                                <p class="publication-title">Paper Title 1</p>
+                                <p class="publication-authors">Author 1, Author 2, You</p>
+                                <p class="publication-venue">Journal/Conference Name, Year</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-content">
+                            <div class="publication-image-wrapper">
+                                <img src="images/publications/paper2.jpg" alt="Paper 2" class="publication-image">
+                            </div>
+                            <div class="publication-text">
+                                <p class="publication-title">Paper Title 2</p>
+                                <p class="publication-authors">Author 1, You, Author 3</p>
+                                <p class="publication-venue">Journal/Conference Name, Year</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="education">
+                <h2 class="section-title">Education</h2>
+                <div class="content" id="educationList">
+                    <div class="education-item">
+                        <div class="education-content">
+                            <div class="education-image-wrapper">
+                                <img src="uos.jpg" alt="University of Southampton Logo" class="education-image">
+                            </div>
+                            <div class="education-text">
+                                <p class="education-degree">BSc Computer Science</p>
+                                <p class="education-school">University of Southampton</p>
+                                <p class="education-year">2022.9-2026.6</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="interests">
+                <h2 class="section-title">Hobbies</h2>
+                <div class="content" id="interestsList">
+                    <p>I really enjoy playing the piano (Gr. 10), playing table tennis, reading, and photography. You can find some of my photos in the <a href="gallery.html" class="professor-link">gallery</a> page.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
+
