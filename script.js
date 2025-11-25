@@ -84,6 +84,7 @@ function updateLastUpdated() {
 // Run on load
 updateLastUpdated();
 
+<<<<<<< HEAD
 // Gallery photo organization and lightbox
 function organizeGallery() {
     const galleryGrid = document.getElementById('galleryGrid');
@@ -301,4 +302,26 @@ if (document.readyState === 'loading') {
 } else {
     organizeGallery();
 }
+=======
+// Research description show more/less toggles
+function initResearchToggles() {
+    const toggles = document.querySelectorAll('.research-toggle');
+    toggles.forEach(toggle => {
+        const targetId = toggle.dataset.target;
+        const target = document.getElementById(targetId);
+        if (!target) {
+            toggle.hidden = true;
+            return;
+        }
+
+        toggle.addEventListener('click', () => {
+            const expanded = target.classList.toggle('expanded');
+            toggle.textContent = expanded ? 'Show Less' : 'Show More';
+            toggle.setAttribute('aria-expanded', expanded);
+        });
+    });
+}
+
+initResearchToggles();
+>>>>>>> 6831d12 (added research)
 

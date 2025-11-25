@@ -29,7 +29,8 @@
                         <section class="section about-inline" id="about">
                             <h2 class="section-title about-title">About Me</h2>
                             <div class="content" id="introduction">
-                                <p>Hi there! I'm a third-year undergraduate student in Computer Science at School of Electronics and Computer Science, University of Southampton. My research interests include control theory and robotics. I was very fortunate to be an undergraduate researcher at the <a href="https://muro.ucsd.edu/" target="_blank" class="professor-link">MURO Lab</a> at UC San Diego, under the supervision of <a href="http://terrano.ucsd.edu/jorge/" target="_blank" class="professor-link">Professor Jorge Cortés</a>.</p>
+                                <p>Hi there! <strong>I'm a third-year undergraduate student in Computer Science at School of Electronics and Computer Science, University of Southampton.</strong> My research interests lie at the intersection of <strong>robotics and control</strong>, with a focus on safe autonomy, nonlinear
+                                    control, formal verification, and learning-augmented methods for complex robotic systems. Beyond control theory, I am also interested in bridging theoretical methods with real-world robotic systems. I was very fortunate to be an undergraduate researcher at the <a href="https://muro.ucsd.edu/" target="_blank" class="professor-link">MURO Lab</a> at UC San Diego, under the supervision of <a href="http://terrano.ucsd.edu/jorge/" target="_blank" class="professor-link">Professor Jorge Cortés</a>.</p>
                                 <p><strong>Email:</strong> jz14g22@soton.ac.uk</p>
                             </div>
                         </section>
@@ -39,8 +40,8 @@
                     <a href="#about" class="folder-tab">
                         <span class="tab-label">About Me</span>
                     </a>
-                    <a href="#publications" class="folder-tab">
-                        <span class="tab-label">Publications</span>
+                    <a href="#research" class="folder-tab">
+                        <span class="tab-label">Research</span>
                     </a>
                     <a href="#awards" class="folder-tab">
                         <span class="tab-label">Awards</span>
@@ -60,9 +61,51 @@
 
         <main class="main-content">
 
+<<<<<<< HEAD
             <section class="section" id="publications">
                 <h2 class="section-title">Publications</h2>
                 <div class="content" id="publicationsList">
+=======
+            <section class="section" id="research">
+                <h2 class="section-title">Research Projects</h2>
+                <div class="content research-list">
+                    <div class="research-item">
+                        <div class="research-text">
+                            <p class="research-title">Humanoid Imitation of Facial Expressions through Deep Learning (Thesis)</p>
+                            <p class="research-supervisor"><strong>Supervisor:</strong> <a href="https://zhiwu-huang.github.io/" target="_blank" class="professor-link">Prof. Zhiwu Huang</a></p>
+                            <p class="research-meta">University of Southampton · October 2025 – Present</p>
+                            <p class="research-description">
+                                Humanoid robots are becoming an increasingly prominent research focus in the field of robotics. In scenarios where humans and robots coexist, such as education, healthcare, and service environments, the ability of humanoid robots to express emotions is playing a vital role. Facial expressions, in particular, not only influence first impressions but also directly affect the naturalness and emotional quality of communication.
+                                <span class="research-more" id="research-more-1"> This project builds upon the X2C dataset and focuses on improving the robot's ability to understand and imitate human facial expressions. We are building deep learning architectures with stronger representational capacity to enhance the accuracy of mapping expressions to robot control commands. At the same time, we are developing a fine-grained emotional labeling scheme that captures expression intensity, blended emotions, and micro-expressions, in order to provide higher-quality supervision signals. These efforts aim to support the generation of facial behaviors that are both more expressive and emotionally nuanced.</span>
+                                <button type="button" class="research-toggle" data-target="research-more-1" aria-expanded="false" aria-controls="research-more-1">Show More</button>
+                            </p>
+                        </div>
+                        <div class="research-image-wrapper">
+                            <div class="research-image-frame">
+                                <img src="x2c.png" alt="Humanoid facial expression example from X2C dataset" class="research-image">
+                            </div>
+                            <p class="research-image-caption">Example from the open-source X2C dataset</p>
+                        </div>
+                    </div>
+                    <div class="research-item">
+                        <div class="research-text">
+                            <p class="research-title">Verification of Control Lyapunov and Control Barrier Function Compatibility via Neural Control Certificates (paper in preparation)</p>
+                            <p class="research-supervisor"><strong>Supervisor:</strong> <a href="http://terrano.ucsd.edu/jorge/" target="_blank" class="professor-link">Prof. Jorge Cortés</a> · <strong>Collaborators:</strong> <a href="https://polmestres.github.io" target="_blank" class="professor-link">Pol Mestres</a>, <a href="https://sylviaherbert.com/azra-begzadic" target="_blank" class="professor-link">Azra Begzadić</a></p>
+                            <p class="research-meta">University of California, San Diego · September 2025 – Present</p>
+                            <p class="research-description">
+                                Ensuring compatibility between Control Lyapunov Functions (CLFs) and Control Barrier Functions (CBFs) is essential for synthesizing controllers that guarantee both stability and safety. However, even when candidate certificates are available, it remains difficult to formally verify that the CLF and CBF constraints are simultaneously satisfiable over a compact domain, especially in nonlinear or high-dimensional systems. Existing formal tools such as sum-of-squares (SOS) programming, symbolic reasoning, mixed-integer programming (MIP), and satisfiability modulo theories (SMT) either fail to scale efficiently or rely on restrictive structural assumptions. At the same time, neural networks (NNs) provide a flexible and expressive function class for constructing candidate certificates but lack principled verification guarantees.
+                                <span class="research-more" id="research-more-2"> In this work, we develop a sound and scalable verification framework for certifying the compatibility of CLF and CBF certificates under a fixed candidate controller. By reformulating the joint stability and safety requirement as a residual inequality decision problem, the proposed approach avoids the need for quantifier elimination, specifically the explicit treatment of "for all states, there exists a control input" constraints. This enables direct numerical certification over compact domains. Our method combines partition-based residual bounding with a neural bounding oracle to produce a formal certificate or find concrete counterexamples.</span>
+                                <button type="button" class="research-toggle" data-target="research-more-2" aria-expanded="false" aria-controls="research-more-2">Show More</button>
+                            </p>
+                        </div>
+                        <div class="research-image-wrapper">
+                            <div class="research-image-frame">
+                                <img src="framework.png" alt="Verification framework for CLF and CBF compatibility" class="research-image">
+                            </div>
+                            <p class="research-image-caption">Verification framework overview</p>
+                        </div>
+                    </div>
+>>>>>>> 6831d12 (added research)
                 </div>
             </section>
 
