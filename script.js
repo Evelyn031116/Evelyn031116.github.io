@@ -84,7 +84,6 @@ function updateLastUpdated() {
 // Run on load
 updateLastUpdated();
 
-<<<<<<< HEAD
 // Gallery photo organization and lightbox
 function organizeGallery() {
     const galleryGrid = document.getElementById('galleryGrid');
@@ -164,50 +163,60 @@ function categorizeImage(item, img, landscapeItems, portraitItems, squareItems) 
 }
 
 function renderOrganizedGallery(container, landscapeItems, portraitItems, squareItems, allItems) {
-    // Combine all items in order: landscape, square, portrait
-    const allOrganizedItems = [...landscapeItems, ...squareItems, ...portraitItems];
+    // Combine landscape and square items (horizontal orientation)
+    const horizontalItems = [...landscapeItems, ...squareItems];
+    // Portrait items (vertical orientation)
+    const verticalItems = [...portraitItems];
     
-    // Create rows and add click events
     const rows = [];
-    let currentRow = null;
-    let currentRowType = null;
+    const ITEMS_PER_ROW = 4;
 
-    allOrganizedItems.forEach((item, index) => {
-        const img = item.querySelector('.gallery-image');
-        if (!img) return;
+    // Helper function to create rows from items
+    function createRowsFromItems(items, itemType) {
+        let currentRow = null;
+        let itemsInRow = 0;
 
-        const aspectRatio = img.naturalWidth / img.naturalHeight;
-        const itemType = aspectRatio > 1.1 ? 'landscape' : (aspectRatio < 0.9 ? 'portrait' : 'square');
+        items.forEach((item, index) => {
+            const img = item.querySelector('.gallery-image');
+            if (!img) return;
 
-        // Create new row if needed
-        if (!currentRow || currentRowType !== itemType) {
-            currentRow = document.createElement('div');
-            currentRow.className = 'gallery-row';
-            currentRowType = itemType;
-            rows.push(currentRow);
-        }
+            // Create new row if needed (new type or row is full)
+            if (!currentRow || itemsInRow >= ITEMS_PER_ROW) {
+                currentRow = document.createElement('div');
+                currentRow.className = 'gallery-row';
+                rows.push(currentRow);
+                itemsInRow = 0;
+            }
 
-        // Find original index in allItems
-        const originalIndex = allItems.findIndex(orig => orig.src === img.src);
-        const clickIndex = originalIndex >= 0 ? originalIndex : index;
+            // Find original index in allItems
+            const originalIndex = allItems.findIndex(orig => orig.src === img.src);
+            const clickIndex = originalIndex >= 0 ? originalIndex : index;
 
-        // Store original index as data attribute
-        item.setAttribute('data-original-index', clickIndex);
+            // Store original index as data attribute
+            item.setAttribute('data-original-index', clickIndex);
 
-        // Add click event
-        item.addEventListener('click', () => {
-            const allCurrentItems = Array.from(container.querySelectorAll('.gallery-item'));
-            // Sort items by original index to maintain order
-            const sortedItems = allCurrentItems.sort((a, b) => {
-                const indexA = parseInt(a.getAttribute('data-original-index')) || 0;
-                const indexB = parseInt(b.getAttribute('data-original-index')) || 0;
-                return indexA - indexB;
+            // Add click event
+            item.addEventListener('click', () => {
+                const allCurrentItems = Array.from(container.querySelectorAll('.gallery-item'));
+                // Sort items by original index to maintain order
+                const sortedItems = allCurrentItems.sort((a, b) => {
+                    const indexA = parseInt(a.getAttribute('data-original-index')) || 0;
+                    const indexB = parseInt(b.getAttribute('data-original-index')) || 0;
+                    return indexA - indexB;
+                });
+                openLightbox(clickIndex, sortedItems);
             });
-            openLightbox(clickIndex, sortedItems);
-        });
 
-        currentRow.appendChild(item);
-    });
+            currentRow.appendChild(item);
+            itemsInRow++;
+        });
+    }
+
+    // First render horizontal items (landscape and square)
+    createRowsFromItems(horizontalItems, 'horizontal');
+    
+    // Then render vertical items (portrait)
+    createRowsFromItems(verticalItems, 'vertical');
 
     // Append all rows to container
     rows.forEach(row => container.appendChild(row));
@@ -302,7 +311,6 @@ if (document.readyState === 'loading') {
 } else {
     organizeGallery();
 }
-=======
 // Research description show more/less toggles
 function initResearchToggles() {
     const toggles = document.querySelectorAll('.research-toggle');
@@ -323,5 +331,4 @@ function initResearchToggles() {
 }
 
 initResearchToggles();
->>>>>>> 6831d12 (added research)
 
